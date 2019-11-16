@@ -7,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 
 
 public class DataManagerTest {
-    static DataManager sDataManager;
 
+    static DataManager sDataManager;
     @BeforeClass
     public static void classSetUp() throws Exception {
         sDataManager = DataManager.getInstance();
@@ -69,9 +69,7 @@ public class DataManagerTest {
         final CourseInfo course = sDataManager.getCourse("android_async");
         final String noteTitle = "Test note title";
         final String noteText = "This is the body of my test note";
-
         int noteIndex = sDataManager.createNewNote(course, noteTitle, noteText);
-
         NoteInfo compareNote = sDataManager.getNotes().get(noteIndex);
         assertEquals(course, compareNote.getCourse());
         assertEquals(noteTitle, compareNote.getTitle());

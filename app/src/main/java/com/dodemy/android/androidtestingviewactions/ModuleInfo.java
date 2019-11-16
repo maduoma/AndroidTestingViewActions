@@ -50,9 +50,7 @@ public final class ModuleInfo implements Parcelable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         ModuleInfo that = (ModuleInfo) o;
-
         return mModuleId.equals(that.mModuleId);
     }
 
@@ -73,14 +71,11 @@ public final class ModuleInfo implements Parcelable {
         dest.writeByte((byte)(mIsComplete ? 1 : 0));
     }
 
-    public static final Parcelable.Creator<ModuleInfo> CREATOR =
-            new Parcelable.Creator<ModuleInfo>() {
-
+    public static final Parcelable.Creator<ModuleInfo> CREATOR = new Parcelable.Creator<ModuleInfo>() {
                 @Override
                 public ModuleInfo createFromParcel(Parcel source) {
                     return new ModuleInfo(source);
                 }
-
                 @Override
                 public ModuleInfo[] newArray(int size) {
                     return new ModuleInfo[size];

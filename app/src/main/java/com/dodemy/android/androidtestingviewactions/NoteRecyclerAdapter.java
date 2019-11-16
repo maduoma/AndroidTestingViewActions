@@ -11,7 +11,6 @@ import java.util.List;
 
 
 public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapter.ViewHolder> {
-
     private final Context mContext;
     private final List<NoteInfo> mNotes;
     private final LayoutInflater mLayoutInflater;
@@ -42,16 +41,13 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         public final TextView mTextCourse;
         public final TextView mTextTitle;
         public int mCurrentPosition;
-
         public ViewHolder(View itemView) {
             super(itemView);
-            mTextCourse = (TextView) itemView.findViewById(R.id.text_course);
-            mTextTitle = (TextView) itemView.findViewById(R.id.text_title);
-
+            mTextCourse =  itemView.findViewById(R.id.text_course);
+            mTextTitle = itemView.findViewById(R.id.text_title);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

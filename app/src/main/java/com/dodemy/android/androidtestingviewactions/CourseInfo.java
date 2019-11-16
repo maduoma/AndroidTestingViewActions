@@ -9,7 +9,6 @@ public final class CourseInfo implements Parcelable {
     private final String mCourseId;
     private final String mTitle;
     private final List<ModuleInfo> mModules;
-
     public CourseInfo(String courseId, String title, List<ModuleInfo> modules) {
         mCourseId = courseId;
         mTitle = title;
@@ -66,9 +65,7 @@ public final class CourseInfo implements Parcelable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         CourseInfo that = (CourseInfo) o;
-
         return mCourseId.equals(that.mCourseId);
 
     }
@@ -89,18 +86,14 @@ public final class CourseInfo implements Parcelable {
         dest.writeTypedList(mModules);
     }
 
-    public static final Parcelable.Creator<CourseInfo> CREATOR =
-            new Parcelable.Creator<CourseInfo>() {
-
+    public static final Parcelable.Creator<CourseInfo> CREATOR = new Parcelable.Creator<CourseInfo>() {
                 @Override
                 public CourseInfo createFromParcel(Parcel source) {
                     return new CourseInfo(source);
                 }
-
                 @Override
                 public CourseInfo[] newArray(int size) {
                     return new CourseInfo[size];
                 }
             };
-
 }

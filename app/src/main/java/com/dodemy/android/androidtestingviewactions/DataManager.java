@@ -5,7 +5,6 @@ import java.util.List;
 
 public class DataManager {
     private static DataManager ourInstance = null;
-
     private List<CourseInfo> mCourses = new ArrayList<>();
     private List<com.dodemy.android.androidtestingviewactions.NoteInfo> mNotes = new ArrayList<>();
 
@@ -19,11 +18,11 @@ public class DataManager {
     }
 
     public String getCurrentUserName() {
-        return "Jim Wilson";
+        return "Madu";
     }
 
     public String getCurrentUserEmail() {
-        return "jimw@jwhh.com";
+        return "madu@dodemy.com";
     }
 
     public List<com.dodemy.android.androidtestingviewactions.NoteInfo> getNotes() {
@@ -186,7 +185,6 @@ public class DataManager {
         modules.add(new ModuleInfo("java_core_m08", "Runtime Type Information and Reflection"));
         modules.add(new ModuleInfo("java_core_m09", "Adding Type Metadata with Annotations"));
         modules.add(new ModuleInfo("java_core_m10", "Persisting Objects with Serialization"));
-
         return new CourseInfo("java_core", "Java Fundamentals: The Core Platform", modules);
     }
 
@@ -196,7 +194,6 @@ public class DataManager {
         note.setCourse(course);
         note.setTitle(noteTitle);
         note.setText(noteText);
-
         return index;
     }
     //endregion
